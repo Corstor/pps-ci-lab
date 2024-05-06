@@ -1,8 +1,10 @@
-name: Ale CI
+name: Gradle Build CI
 
 on: 
     push:
     pull_request:
+        branches:
+          - develop
 
 jobs:
     Gradle-build:
