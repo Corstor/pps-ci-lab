@@ -1,3 +1,8 @@
 plugins {
-    java
+	java
+	application
+}
+
+application {
+    mainClass = "HelloStortini"
 }
