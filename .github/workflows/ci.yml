@@ -1,17 +1,21 @@
-name: Linux env
-on:
+name: Gradle Build CI
+
+on: 
     push:
     pull_request:
         branches:
-            - develop
+          - develop
+
 jobs:
-    Build:
+    Gradle-build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
-            - uses: joschi/setup-jdk@v2.3.0
+              uses: actions/checkout@v4
+            - name: Setup Java
+              uses: actions/setup-java@v4
               with:
-                java-version: 21
-            - name: Build
+                distribution: 'zulu'
+                java-version: '21'
+            - name: Clean build
               run: ./gradlew clean build
