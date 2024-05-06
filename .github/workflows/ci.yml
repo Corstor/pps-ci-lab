@@ -1,0 +1,19 @@
+name: Ale CI
+
+on: 
+    push:
+    pull_request:
+
+jobs:
+    Gradle-build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: action/checkout@v4
+            - name: Setup Java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'zulu'
+                java-version: '21'
+            - name: Clean build
+              run: ./gradlew clean build
