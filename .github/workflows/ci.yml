@@ -1,11 +1,9 @@
 name: Test using Gradle
-
 on: 
     push:
     pull_request:
         branches:
           - develop
-
 jobs:
     Gradle-build:
         runs-on: ubuntu-latest

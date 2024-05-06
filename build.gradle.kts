@@ -4,5 +4,5 @@ plugins {
 }
 
 application {
-    mainClass = "HelloTampieri"
+    mainClass = "HelloStortini"
 }
